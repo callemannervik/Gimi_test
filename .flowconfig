@@ -34,6 +34,13 @@ module.file_ext=.js
 module.file_ext=.json
 module.file_ext=.ios.js
 
+module.name_mapper='^Components\/\(.*\)$' -> '<PROJECT_ROOT>/src/Components/\1'
+module.name_mapper='^Core\/\(.*\)$' -> '<PROJECT_ROOT>/src/Core/\1'
+module.name_mapper='^Functions\/\(.*\)$' -> '<PROJECT_ROOT>/src/Functions/\1'
+module.name_mapper='^Navigation\/\(.*\)$' -> '<PROJECT_ROOT>/src/Navigation/\1'
+module.name_mapper='^Resources\/\(.*\)$' -> '<PROJECT_ROOT>/src/Resources/\1'
+module.name_mapper='^Translations\/\(.*\)$' -> '<PROJECT_ROOT>/src/Translations/\1'
+
 munge_underscores=true
 
 module.name_mapper='^react-native/\(.*\)$' -> '<PROJECT_ROOT>/node_modules/react-native/\1'

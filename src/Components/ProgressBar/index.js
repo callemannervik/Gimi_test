@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { View, Animated, StyleSheet } from 'react-native'
@@ -9,11 +10,22 @@ import { SHADOW } from 'Core/styles'
 /** Constants */
 const BAR_HEIGHT = 14
 
-class ProgressBar extends Component {
-  constructor (props) {
+type ProgressBarProps = {
+  progress: number,
+  animate?: boolean,
+}
+
+type ProgressBarState = {
+  animatedValue: Object
+}
+
+class ProgressBar extends Component<ProgressBarProps, ProgressBarState> {
+  constructor (props: Object) {
     super()
     const { animate, progress } = props
-    this.animatedValue = new Animated.Value(animate ? 0 : progress)
+    this.state = {
+      animatedValue: new Animated.Value(animate ? 0 : progress)
+    }
   }
 
   componentDidMount () {
@@ -23,8 +35,8 @@ class ProgressBar extends Component {
     }
   }
 
-  animateProgress = (toValue = 0) => {
-    Animated.timing(this.animatedValue, {
+  animateProgress = (toValue: number) => {
+    Animated.timing(this.state.animatedValue, {
       toValue,
       delay: 200,
       duration: 400,
@@ -33,7 +45,7 @@ class ProgressBar extends Component {
   }
 
   render () {
-    const width = this.animatedValue.interpolate({
+    const width = this.state.animatedValue.interpolate({
       inputRange: [0, 100],
       outputRange: ['0%', '100%']
     })

@@ -1,6 +1,7 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
-import { View, Image, StyleSheet, Animated, Dimensions } from 'react-native'
+import { View, Image, StyleSheet, Dimensions } from 'react-native'
 
 /** Core */
 import { COLORS } from 'Core/colors'
@@ -12,12 +13,11 @@ import AnimatedContainer from 'Components/AnimatedContainer'
 /** Constants */
 const SCREEN_SIZE = Dimensions.get('window')
 
-class LaunchScreen extends Component {
-  constructor () {
-    super()
-    this.animatedValue = new Animated.Value(0)
-  }
+type LaunchScreenProps = {
+  navigation: Object
+}
 
+class LaunchScreen extends Component<LaunchScreenProps> {
   componentDidMount () {
     /*
       Simulate fetching data before launching app.
@@ -33,7 +33,7 @@ class LaunchScreen extends Component {
       <ScreenContainer backgroundColor={COLORS.PINK}>
         <View style={styles.container}>
           <AnimatedContainer animate>
-            <Image source={require('Resources/Icons/gimiLogo.png')} style={styles.image} />
+            <Image source={require('../../../Resources/Icons/gimiLogo.png')} style={styles.image} />
           </AnimatedContainer>
         </View>
       </ScreenContainer>

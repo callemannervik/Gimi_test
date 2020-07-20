@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
@@ -15,8 +16,15 @@ import { getInteger, getDecimals, getPrefix } from 'Functions/handlePrice'
 const LARGE_MARGIN = 4
 const SMALL_MARGIN = 1
 
-class PriceLabel extends Component {
-  getTopMargin = (size) => {
+type PriceLabelProps = {
+  value: number,
+  size?: string,
+  showPrefix?: boolean,
+  showDecimals?: boolean
+}
+
+class PriceLabel extends Component<PriceLabelProps> {
+  getTopMargin = (size: string) => {
     if (size === 'xlarge' || size === 'large') {
       return LARGE_MARGIN
     }

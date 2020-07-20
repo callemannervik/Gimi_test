@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { ScrollView, Image, StyleSheet, View } from 'react-native'
@@ -30,7 +31,11 @@ const CHORES = {
   total: 6
 }
 
-class Dashboard extends Component {
+type DashboardProps = {
+  navigation: Object
+}
+
+class Dashboard extends Component<DashboardProps> {
   renderHeader () {
     return (
       <View style={styles.headerContainer}>
@@ -39,7 +44,7 @@ class Dashboard extends Component {
         </Text>
         <View style={styles.columnsContainer}>
           <Image
-            source={require('Resources/Icons/calendar.png')}
+            source={require('../../../Resources/Icons/calendar.png')}
             style={styles.calendarIcon}
           />
           <Text style={styles.subTitle}>{strings.you_are_set}</Text>
@@ -59,13 +64,13 @@ class Dashboard extends Component {
           <View style={styles.columnsContainer}>
             <Text style={styles.headerTitle} size='large'>{strings.bob}</Text>
             <Image
-              source={require('Resources/Icons/forwardArrow.png')}
+              source={require('../../../Resources/Icons/forwardArrow.png')}
               style={styles.arrowIcon}
             />
           </View>
           <Text style={styles.subTitle}>{strings.master}</Text>
         </View>
-        <ProfileImage source={require('Resources/Images/user.jpg')} />
+        <ProfileImage source={require('../../../Resources/Images/user.jpg')} />
       </TouchableOpacity>
     )
   }
@@ -101,7 +106,10 @@ class Dashboard extends Component {
             <Text style={styles.title}>{strings.accounts}</Text>
             <Text style={[styles.subTitle, { marginBottom: 10 }]}>{strings.gimi_card}</Text>
             <View style={SHADOW}>
-              <Image source={require('Resources/Images/gimiCard.png')} style={styles.gimiCard} />
+              <Image
+                source={require('../../../Resources/Images/gimiCard.png')}
+                style={styles.gimiCard}
+              />
             </View>
           </View>
           <View style={{ flex: 1 }}>
@@ -127,7 +135,7 @@ class Dashboard extends Component {
         <View style={styles.progressContainer}>
           <ProgressCircle progress={GOAL_PROGRESS}>
             <Image
-              source={require('Resources/Images/switch.jpeg')}
+              source={require('../../../Resources/Images/switch.jpeg')}
               style={styles.goalImage}
             />
           </ProgressCircle>
@@ -170,7 +178,7 @@ class Dashboard extends Component {
     return (
       <ScreenContainer
         backgroundColor={COLORS.DARK_BLUE}
-        backgroundImage={require('Resources/Backgrounds/space.png')}
+        backgroundImage={require('../../../Resources/Backgrounds/space.png')}
       >
         <ScrollView
           style={styles.scrollContainer}

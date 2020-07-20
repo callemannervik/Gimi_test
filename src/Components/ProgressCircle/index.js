@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
@@ -13,7 +14,13 @@ const DEFAULT_PROGRESS = 0
 const LINE_WIDTH = 10
 const BACKGROUND_LINE_WIDTH = 2
 
-class ProgressCircle extends Component {
+type ProgressCircleProps = {
+  progress: number,
+  size?: number,
+  children?: any
+}
+
+class ProgressCircle extends Component<ProgressCircleProps> {
     getActiveProgress = () => {
       const { progress } = this.props
       const activeProgress = progress || DEFAULT_PROGRESS

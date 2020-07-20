@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { View, Image, StyleSheet } from 'react-native'
@@ -11,7 +12,11 @@ const IMAGE_SIZE = 50
 const BORDER_SIZE = 2
 const BORDER_CONTAINER_SIZE = IMAGE_SIZE + BORDER_SIZE * 2
 
-class ProfileImage extends Component {
+type ProfileImageProps = {
+  source: number
+}
+
+class ProfileImage extends Component<ProfileImageProps> {
   render () {
     const { source } = this.props
     return (

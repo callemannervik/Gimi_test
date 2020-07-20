@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { View, Image, StyleSheet } from 'react-native'
@@ -9,7 +10,17 @@ import { COLORS } from 'Core/colors'
 /** Components */
 import AnimatedContainer from 'Components/AnimatedContainer'
 
-class ContentCard extends Component {
+type ContentCardProps = {
+  onPress?: Function,
+  animate?: boolean,
+  delay?: number,
+  pressEnabled?: boolean,
+  containerStyle?: any,
+  headerComponent?: any,
+  children?: any
+}
+
+class ContentCard extends Component<ContentCardProps> {
   renderHeader () {
     const { headerComponent } = this.props
     if (headerComponent) {
@@ -23,7 +34,7 @@ class ContentCard extends Component {
     if (pressEnabled) {
       return (
         <View style={styles.iconContainer}>
-          <Image source={require('Resources/Icons/forwardArrow.png')} />
+          <Image source={require('../../Resources/Icons/forwardArrow.png')} />
         </View>
       )
     }

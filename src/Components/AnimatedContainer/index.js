@@ -1,23 +1,37 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { Animated } from 'react-native'
 
-class AnimatedContainer extends Component {
-  constructor (props) {
+type AnimatedContainerProps = {
+  animate?: boolean,
+  delay?: number,
+  children?: any,
+  style?: any
+}
+
+type AnimatedContainerState = {
+  animatedValue: Object
+}
+
+class AnimatedContainer extends Component<AnimatedContainerProps, AnimatedContainerState> {
+  constructor (props: Object) {
     super()
     const { animate } = props
-    this.animatedValue = new Animated.Value(animate ? 0 : 1)
+    this.state = {
+      animatedValue: new Animated.Value(animate ? 0 : 1)
+    }
   }
 
   componentDidMount () {
     const { animate, delay } = this.props
     if (animate) {
-      this.animateContainer(1, delay)
+      this.animateContainer(1, delay || 0)
     }
   }
 
-  animateContainer = (toValue = 0, delay = 0) => {
-    Animated.spring(this.animatedValue, {
+  animateContainer = (toValue: number, delay: number) => {
+    Animated.spring(this.state.animatedValue, {
       toValue,
       delay: delay,
       speed: 15,
@@ -27,11 +41,11 @@ class AnimatedContainer extends Component {
 
   render () {
     const { children, style } = this.props
-    const translateY = this.animatedValue.interpolate({
+    const translateY = this.state.animatedValue.interpolate({
       inputRange: [0, 1],
       outputRange: [50, 0]
     })
-    const opacity = this.animatedValue.interpolate({
+    const opacity = this.state.animatedValue.interpolate({
       inputRange: [0, 1],
       outputRange: [0, 1]
     })

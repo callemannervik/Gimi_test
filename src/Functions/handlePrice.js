@@ -1,24 +1,20 @@
-export const getInteger = (price) => {
-  if (typeof price === 'number') {
+// @flow
+export const getInteger = (price: number): number => {
+  if (price >= 0) {
     return Math.floor(price)
+  } else {
+    return Math.ceil(price)
   }
-  return null
 }
 
-export const getDecimals = (price) => {
-  if (typeof price === 'number') {
-    const integer = getInteger(price)
-    const remaining = price - integer
-    const decimals = Math.round(remaining * 100)
-    return decimals
-  }
-  return null
+export const getDecimals = (price: number): number => {
+  const integer = getInteger(price)
+  const remaining = price - integer
+  const decimals = Math.round(remaining * 100)
+  return decimals
 }
 
-export const getPrefix = (price) => {
-  if (typeof price === 'number') {
-    const prefix = price > 0 ? '+' : '-'
-    return prefix
-  }
-  return null
+export const getPrefix = (price: number): string => {
+  const prefix = price > 0 ? '+' : ''
+  return prefix
 }

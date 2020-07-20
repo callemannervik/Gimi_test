@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { Text as ReactNativeText, StyleSheet, Platform } from 'react-native'
@@ -5,7 +6,13 @@ import { Text as ReactNativeText, StyleSheet, Platform } from 'react-native'
 /** Core */
 import { FONT_FAMILY, FONT_SIZES, FONT_WEIGHTS } from 'Core/fonts'
 
-class Text extends Component {
+type TextProps = {
+  size?: string,
+  style?: any,
+  children?: any
+}
+
+class Text extends Component<TextProps> {
   getTextStyle = () => {
     const { size, style } = this.props
     const textStyle = {}

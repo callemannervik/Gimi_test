@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
@@ -9,7 +10,12 @@ import { COLORS } from 'Core/colors'
 /** Components */
 import Text from 'Components/Text'
 
-class Button extends Component {
+type ButtonProps = {
+  onPress: Function,
+  title: string
+}
+
+class Button extends Component<ButtonProps> {
   handleOnPress = () => {
     const { onPress } = this.props
     if (onPress) {

@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { View, SafeAreaView, Image, StyleSheet, Dimensions } from 'react-native'
@@ -6,7 +7,15 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 /** Constants */
 const SCREEN_SIZE = Dimensions.get('window')
 
-class ScreenContainer extends Component {
+type ScreenContainerProps = {
+  navigation?: Object,
+  showBack?: boolean,
+  backgroundImage?: number,
+  backgroundColor?: string,
+  children?: any
+}
+
+class ScreenContainer extends Component<ScreenContainerProps> {
   renderBackgroundImage () {
     const { backgroundImage } = this.props
     if (backgroundImage) {
@@ -27,7 +36,7 @@ class ScreenContainer extends Component {
           onPress={() => navigation.goBack()}
           containerStyle={styles.backButton}
         >
-          <Image style={styles.backIcon} source={require('Resources/Icons/forwardArrow.png')} />
+          <Image style={styles.backIcon} source={require('../../Resources/Icons/forwardArrow.png')} />
         </TouchableOpacity>
       )
     }

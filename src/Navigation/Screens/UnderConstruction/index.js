@@ -1,3 +1,4 @@
+// @flow
 /** Node modules */
 import React, { Component } from 'react'
 import { ScrollView, StyleSheet } from 'react-native'
@@ -12,13 +13,17 @@ import ScreenContainer from 'Components/ScreenContainer'
 /** Mocked strings */
 import strings from 'Translations/strings'
 
-class UnderConstruction extends Component {
+type UnderConstructionProps = {
+  navigation: Object
+}
+
+class UnderConstruction extends Component<UnderConstructionProps> {
   render () {
     const { navigation } = this.props
     return (
       <ScreenContainer
         backgroundColor={COLORS.DARK_BLUE}
-        backgroundImage={require('Resources/Backgrounds/space.png')}
+        backgroundImage={require('../../../Resources/Backgrounds/space.png')}
         navigation={navigation}
         showBack
       >
