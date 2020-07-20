@@ -1,6 +1,6 @@
 /** Node modules */
 import React, { Component } from 'react'
-import { View, Animated, StyleSheet, Text } from 'react-native'
+import { View, Animated, StyleSheet } from 'react-native'
 
 /** Core */
 import { COLORS } from 'Core/colors'

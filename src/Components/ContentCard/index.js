@@ -1,6 +1,6 @@
 /** Node modules */
 import React, { Component } from 'react'
-import { View, Image, Animated, StyleSheet } from 'react-native'
+import { View, Image, StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 /** Core */

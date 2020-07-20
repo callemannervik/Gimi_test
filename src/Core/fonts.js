@@ -14,13 +14,3 @@ export const FONT_SIZES = {
   LARGE: 20,
   XLARGE: 25
 }
-
-/**
- * Predefined font weights used in App
- */
-export const FONT_WEIGHTS = {
-  LIGHT: '300',
-  REGULAR: '400',
-  BOLD: '500',
-  BLACK: '800'
-}
