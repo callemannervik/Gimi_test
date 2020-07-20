@@ -14,6 +14,7 @@ import BackgroundImage from 'Components/BackgroundImage'
 import ProgressBar from 'Components/ProgressBar'
 import ProgressCircle from 'Components/ProgressCircle'
 import PriceLabel from 'Components/PriceLabel'
+import ProfileImage from 'Components/ProfileImage'
 
 /** Mocked strings */
 const good_morning = 'Good morning, Calle!'
@@ -36,14 +37,36 @@ class Dashboard extends Component {
     )
   }
 
+  renderUser () {
+    return (
+      <View style={styles.userContainer}>
+        <View style={{ flex: 1 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={styles.headerTitle} size='large'>Lucy</Text>
+            <Image source={require('Resources/Icons/forwardArrow.png')} style={styles.arrowIcon} />
+          </View>
+          <Text style={styles.subTitle}>{master}</Text>
+        </View>
+        <ProfileImage source={require('Resources/Images/user.jpg')} />
+      </View>
+    )
+  }
+
   renderAllowance () {
     return (
       <ContentCard
         pressEnabled
         headerComponent={<ProgressBar progress={80} />}
       >
-        <Text style={styles.title}>{allowance}</Text>
-        <Text style={styles.subTitle}>{to_be_tranfered}</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ flex: 2 }}>
+            <Text style={styles.title}>{allowance}</Text>
+            <Text style={styles.subTitle}>{to_be_tranfered}</Text>
+          </View>
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <PriceLabel value={50} size='large' showPrefix />
+          </View>
+        </View>
       </ContentCard>
     )
   }
@@ -75,7 +98,7 @@ class Dashboard extends Component {
         <Text style={styles.title}>Goals</Text>
         <View style={{ alignItems: 'center', marginBottom: 20 }}>
           <ProgressCircle progress={30}>
-            <Image source={require('Resources/Images/gimiCard.png')} style={styles.gimiCard} />
+            <Image source={require('Resources/Images/switch.jpeg')} style={styles.gimiCard} />
           </ProgressCircle>
           <Text style={styles.subTitle} size='small'>Nintendo Switch</Text>
         </View>
@@ -107,6 +130,7 @@ class Dashboard extends Component {
         <BackgroundImage source={require('Resources/Backgrounds/space.png')} />
         <ScrollView style={styles.scrollContainer}>
           {this.renderHeader()}
+          {this.renderUser()}
           {this.renderAllowance()}
           {this.renderAccounts()}
           <View style={styles.columnsContainer}>
@@ -155,6 +179,14 @@ const styles = StyleSheet.create({
     width: 130,
     resizeMode: 'contain',
     overflow: 'visible'
+  },
+  userContainer: {
+    flexDirection: 'row',
+    marginBottom: 20
+  },
+  arrowIcon: {
+    tintColor: COLORS.WHITE_70,
+    marginLeft: 10
   }
 })
 

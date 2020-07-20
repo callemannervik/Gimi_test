@@ -5,6 +5,7 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress'
 
 /** Core */
 import { COLORS } from 'Core/colors'
+import { SHADOW } from 'Core/styles'
 
 /** Constants */
 const DEFAULT_SIZE = 60
@@ -65,6 +66,7 @@ class ProgressCircle extends Component {
             lineCap='round'
             tintColor={COLORS.GREEN}
             backgroundColor={COLORS.WHITE_20}
+            style={{ ...SHADOW }}
           />
         </View>
       )

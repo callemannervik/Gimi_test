@@ -1,6 +1,7 @@
 /** Node modules */
 import React, { Component } from 'react'
-import { View, TouchableOpacity, Image, StyleSheet } from 'react-native'
+import { View, Image, StyleSheet } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 /** Core */
 import { COLORS } from 'Core/colors'
@@ -31,6 +32,7 @@ class ContentCard extends Component {
     return (
       <TouchableOpacity
         style={[styles.container, containerStyle && containerStyle]}
+        containerStyle={{ flex: 1 }}
         activeOpacity={0.8}
         disabled={!pressEnabled}
       >
