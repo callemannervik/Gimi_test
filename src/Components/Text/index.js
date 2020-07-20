@@ -1,16 +1,28 @@
 /** Node modules */
 import React, { Component } from 'react'
-import { Text as ReactNativeText, StyleSheet } from 'react-native'
+import { Text as ReactNativeText, StyleSheet, Platform } from 'react-native'
 
 /** Core */
-import { FONT_FAMILY, FONT_SIZES } from 'Core/fonts'
+import { FONT_FAMILY, FONT_SIZES, FONT_WEIGHTS } from 'Core/fonts'
 
 class Text extends Component {
   getTextStyle = () => {
-    const { size } = this.props
+    const { size, style } = this.props
     const textStyle = {}
     if (size && FONT_SIZES[size.toUpperCase()]) {
       textStyle.fontSize = FONT_SIZES[size.toUpperCase()]
+    }
+    if (Platform.OS === 'android' && style && style.fontWeight) {
+      const { fontWeight } = style
+      if (fontWeight === '300') {
+        textStyle.fontFamily = FONT_WEIGHTS.LIGHT
+      } else if (fontWeight === '400') {
+        textStyle.fontFamily = FONT_WEIGHTS.REGULAR
+      } else if (fontWeight === '500') {
+        textStyle.fontFamily = FONT_WEIGHTS.BOLD
+      } else if (fontWeight === '800') {
+        textStyle.fontFamily = FONT_WEIGHTS.BLACK
+      }
     }
     return textStyle
   }

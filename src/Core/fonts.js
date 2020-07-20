@@ -1,8 +1,14 @@
+/** Node modules */
+import { Platform } from 'react-native'
+
+/** Constants */
+const isIos = Platform.OS === 'ios'
+
 /**
  * Predefined font families used in App
  */
 export const FONT_FAMILY = {
-  DEFAULT: 'Muli'
+  DEFAULT: isIos ? 'Muli' : 'Muli-Regular'
 }
 
 /**
@@ -13,4 +19,14 @@ export const FONT_SIZES = {
   DEFAULT: 15,
   LARGE: 20,
   XLARGE: 25
+}
+
+/**
+ * Predefined font sizes used in App
+ */
+export const FONT_WEIGHTS = {
+  LIGHT: 'Muli-Light',
+  REGULAR: 'Muli-Regular',
+  BOLD: 'Muli-Bold',
+  BLACK: 'Muli-Black'
 }

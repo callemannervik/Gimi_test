@@ -170,7 +170,10 @@ class Dashboard extends Component {
         backgroundColor={COLORS.DARK_BLUE}
         backgroundImage={require('Resources/Backgrounds/space.png')}
       >
-        <ScrollView style={styles.scrollContainer}>
+        <ScrollView
+          style={styles.scrollContainer}
+          contentContainerStyle={{ paddingBottom: 100 }}
+        >
           {this.renderHeader()}
           {this.renderUser()}
           {this.renderAllowance()}
