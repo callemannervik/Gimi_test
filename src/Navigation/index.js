@@ -8,16 +8,20 @@ import LaunchScreen from './LaunchScreen'
 import Dashboard from './Dashboard'
 import UnderConstruction from './UnderConstruction'
 
-const DashBoardStack = createStackNavigator()
+const fadeTransition = ({ current, closing }) => ({
+  cardStyle: {
+    opacity: current.progress
+  }
+})
 
-const DashboardNavigator = () => {
+const AppStack = createStackNavigator()
+
+const App = () => {
   return (
-    <NavigationContainer>
-      <DashBoardStack.Navigator>
-        <DashBoardStack.Screen name='DashboardScreen' component={Dashboard} />
-        <DashBoardStack.Screen name='UnderConstruction' component={UnderConstruction} />
-      </DashBoardStack.Navigator>
-    </NavigationContainer>
+    <AppStack.Navigator screenOptions={{ header: () => null }}>
+      <AppStack.Screen name='Dashboard' component={Dashboard} />
+      <AppStack.Screen name='UnderConstruction' component={UnderConstruction} />
+    </AppStack.Navigator>
   )
 }
 
@@ -26,9 +30,16 @@ const RootStack = createStackNavigator()
 const RootNavigator = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
-        {/* <RootStack.Screen name='LaunchScreen' component={LaunchScreen} /> */}
-        <RootStack.Screen name='Dashboard' component={DashboardNavigator} />
+      <RootStack.Navigator screenOptions={{ header: () => null }}>
+        <RootStack.Screen name='LaunchScreen' component={LaunchScreen} />
+        <RootStack.Screen
+          name='App'
+          component={App}
+          options={{
+            cardStyleInterpolator: fadeTransition,
+            gestureEnabled: false
+          }}
+        />
       </RootStack.Navigator>
     </NavigationContainer>
   )

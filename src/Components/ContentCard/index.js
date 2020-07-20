@@ -28,13 +28,14 @@ class ContentCard extends Component {
   }
 
   render () {
-    const { children, pressEnabled, containerStyle } = this.props
+    const { children, pressEnabled, containerStyle, onPress } = this.props
     return (
       <TouchableOpacity
         style={[styles.container, containerStyle && containerStyle]}
         containerStyle={{ flex: 1 }}
         activeOpacity={0.8}
         disabled={!pressEnabled}
+        onPress={onPress}
       >
         {this.renderHeader()}
         <View style={styles.contentContainer}>

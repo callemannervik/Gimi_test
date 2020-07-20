@@ -10,11 +10,11 @@ import { SHADOW } from 'Core/styles'
 import Text from 'Components/Text'
 import Button from 'Components/Button'
 import ContentCard from 'Components/ContentCard'
-import BackgroundImage from 'Components/BackgroundImage'
 import ProgressBar from 'Components/ProgressBar'
 import ProgressCircle from 'Components/ProgressCircle'
 import PriceLabel from 'Components/PriceLabel'
 import ProfileImage from 'Components/ProfileImage'
+import ScreenContainer from 'Components/ScreenContainer'
 
 /** Mocked strings */
 const good_morning = 'Good morning, Calle!'
@@ -53,10 +53,12 @@ class Dashboard extends Component {
   }
 
   renderAllowance () {
+    const { navigation } = this.props
     return (
       <ContentCard
         pressEnabled
         headerComponent={<ProgressBar progress={80} />}
+        onPress={() => navigation.navigate('UnderConstruction')}
       >
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 2 }}>
@@ -126,8 +128,10 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <View style={{ flex: 1 }}>
-        <BackgroundImage source={require('Resources/Backgrounds/space.png')} />
+      <ScreenContainer
+        backgroundColor={COLORS.DARK_BLUE}
+        backgroundImage={require('Resources/Backgrounds/space.png')}
+      >
         <ScrollView style={styles.scrollContainer}>
           {this.renderHeader()}
           {this.renderUser()}
@@ -138,7 +142,7 @@ class Dashboard extends Component {
             {this.renderChores()}
           </View>
         </ScrollView>
-      </View>
+      </ScreenContainer>
     )
   }
 }

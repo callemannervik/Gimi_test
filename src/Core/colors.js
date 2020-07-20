@@ -3,6 +3,7 @@
  */
 export const COLORS = {
   GREEN: '#79e194',
+  PINK: '#ffcdb9',
   LIGHT_BLUE: '#3b4057',
   DARK_BLUE: '#010634',
   WHITE: '#ffffff',

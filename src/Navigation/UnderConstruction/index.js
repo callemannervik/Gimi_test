@@ -1,0 +1,41 @@
+/** Node modules */
+import React, { Component } from 'react'
+import { ScrollView, StyleSheet } from 'react-native'
+
+/** Core */
+import { COLORS } from 'Core/colors'
+
+/** Components */
+import Text from 'Components/Text'
+import ScreenContainer from 'Components/ScreenContainer'
+
+class UnderConstruction extends Component {
+  render () {
+    return (
+      <ScreenContainer
+        backgroundColor={COLORS.DARK_BLUE}
+        backgroundImage={require('Resources/Backgrounds/space.png')}
+      >
+        <ScrollView
+          style={styles.scrollContainer}
+          contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
+        >
+          <Text style={styles.text} size='large'>Oops, this is still under construction.. </Text>
+        </ScrollView>
+      </ScreenContainer>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  scrollContainer: {
+    paddingHorizontal: 50
+  },
+  text: {
+    color: COLORS.WHITE,
+    textAlign: 'center',
+    fontWeight: '800'
+  }
+})
+
+export default UnderConstruction

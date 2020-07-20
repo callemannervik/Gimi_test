@@ -1,26 +1,32 @@
 /** Node modules */
 import React, { Component } from 'react'
-import { TouchableOpacity, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
 /** Core */
-import { COLORS } from '../../Core/colors'
+import { COLORS } from 'Core/colors'
 
 /** Components */
-import { Text } from '../../Components/Text'
+import ScreenContainer from 'Components/ScreenContainer'
 
 class LaunchScreen extends Component {
+  componentDidMount () {
+    const { navigation } = this.props
+    setTimeout(() => {
+      navigation.navigate('App')
+    }, 2000)
+  }
+
   render () {
     return (
-      <TouchableOpacity>
-        <Text>LaunchScreen</Text>
-      </TouchableOpacity>
+      <ScreenContainer backgroundColor={COLORS.PINK} />
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.LIGHT_BLUE
+    flex: 1,
+    backgroundColor: COLORS.DARK_BLUE
   }
 })
 
