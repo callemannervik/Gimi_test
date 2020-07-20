@@ -24,7 +24,7 @@ class UnderConstruction extends Component {
       >
         <ScrollView
           style={styles.scrollContainer}
-          contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
+          contentContainerStyle={styles.contentContainer}
         >
           <Text style={styles.text} size='large'>{strings.under_construction}</Text>
         </ScrollView>
@@ -36,6 +36,10 @@ class UnderConstruction extends Component {
 const styles = StyleSheet.create({
   scrollContainer: {
     paddingHorizontal: 50
+  },
+  contentContainer: {
+    flexGrow: 1,
+    justifyContent: 'center'
   },
   text: {
     color: COLORS.WHITE,

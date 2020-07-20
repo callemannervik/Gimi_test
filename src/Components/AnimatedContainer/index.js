@@ -40,9 +40,7 @@ class AnimatedContainer extends Component {
         style={[
           {
             opacity,
-            transform: [
-              { translateY }
-            ]
+            transform: [{ translateY }]
           },
           style && style
         ]}

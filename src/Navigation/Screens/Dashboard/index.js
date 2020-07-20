@@ -20,6 +20,16 @@ import ScreenContainer from 'Components/ScreenContainer'
 /** Mocked strings */
 import strings from 'Translations/strings'
 
+/** Mocked values */
+const PROGRESS = 75
+const TRANSFER_AMOUNT = 50
+const CARD_BALANCE = 1900.54
+const GOAL_PROGRESS = 35
+const CHORES = {
+  completed: 4,
+  total: 6
+}
+
 class Dashboard extends Component {
   renderHeader () {
     return (
@@ -27,7 +37,7 @@ class Dashboard extends Component {
         <Text style={styles.headerTitle} size='xlarge'>
           {strings.good_morning}
         </Text>
-        <View style={{ flexDirection: 'row' }}>
+        <View style={styles.columnsContainer}>
           <Image
             source={require('Resources/Icons/calendar.png')}
             style={styles.calendarIcon}
@@ -46,7 +56,7 @@ class Dashboard extends Component {
         onPress={() => navigation.navigate('UnderConstruction')}
       >
         <View style={{ flex: 1 }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={styles.columnsContainer}>
             <Text style={styles.headerTitle} size='large'>{strings.bob}</Text>
             <Image
               source={require('Resources/Icons/forwardArrow.png')}
@@ -65,17 +75,17 @@ class Dashboard extends Component {
     return (
       <ContentCard
         pressEnabled
-        headerComponent={<ProgressBar progress={80} animate />}
+        headerComponent={<ProgressBar progress={PROGRESS} animate />}
         onPress={() => navigation.navigate('UnderConstruction')}
         animate
       >
-        <View style={{ flexDirection: 'row' }}>
+        <View style={styles.columnsContainer}>
           <View style={{ flex: 2 }}>
             <Text style={styles.title}>{strings.allowance}</Text>
             <Text style={styles.subTitle}>{strings.to_be_transfered}</Text>
           </View>
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <PriceLabel value={50} showPrefix />
+          <View style={styles.columnCentered}>
+            <PriceLabel value={TRANSFER_AMOUNT} showPrefix />
           </View>
         </View>
       </ContentCard>
@@ -93,8 +103,8 @@ class Dashboard extends Component {
             <Image source={require('Resources/Images/gimiCard.png')} style={styles.gimiCard} />
           </View>
           <View style={{ flex: 1 }}>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-              <PriceLabel value={1900.54} size='xlarge' />
+            <View style={styles.columnCentered}>
+              <PriceLabel value={CARD_BALANCE} size='xlarge' />
               <Text style={styles.subTitle}>{strings.card_balance}</Text>
             </View>
             <Button
@@ -112,14 +122,14 @@ class Dashboard extends Component {
     return (
       <ContentCard containerStyle={{ marginRight: 5 }} animate delay={200}>
         <Text style={[styles.title, { marginBottom: 10 }]}>{strings.goals}</Text>
-        <View style={{ alignItems: 'center', marginBottom: 20 }}>
-          <ProgressCircle progress={30}>
+        <View style={styles.progressContainer}>
+          <ProgressCircle progress={GOAL_PROGRESS}>
             <Image
               source={require('Resources/Images/switch.jpeg')}
-              style={{ height: '100%', width: '100%', resizeMode: 'cover' }}
+              style={styles.goalImage}
             />
           </ProgressCircle>
-          <Text style={styles.subTitle} size='small'>{strings.nintendo}</Text>
+          <Text style={styles.infoText}>{strings.nintendo}</Text>
         </View>
         <Button
           title={strings.contribute}
@@ -131,16 +141,20 @@ class Dashboard extends Component {
 
   renderChores () {
     const { navigation } = this.props
+    const { completed, total } = CHORES
+    const choreProgress = (completed / total) * 100
     return (
       <ContentCard containerStyle={{ marginLeft: 5 }} animate delay={250}>
         <Text style={[styles.title, { marginBottom: 10 }]}>Chores</Text>
-        <View style={{ alignItems: 'center', marginBottom: 20 }}>
-          <ProgressCircle progress={30}>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-              <Text style={{ color: 'white', fontWeight: '500' }} size='small'>3/6</Text>
+        <View style={styles.progressContainer}>
+          <ProgressCircle progress={choreProgress}>
+            <View style={styles.columnCentered}>
+              <Text style={styles.title} size='small'>
+                {`${completed}/${total}`}
+              </Text>
             </View>
           </ProgressCircle>
-          <Text style={styles.subTitle} size='small'>{strings.this_week}</Text>
+          <Text style={styles.infoText}>{strings.this_week}</Text>
         </View>
         <Button
           title={strings.add_chore}
@@ -172,14 +186,12 @@ class Dashboard extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: COLORS.LIGHT_BLUE
-  },
   scrollContainer: {
     paddingHorizontal: 20
   },
   columnsContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   headerContainer: {
     paddingTop: 20,
@@ -193,6 +205,10 @@ const styles = StyleSheet.create({
   calendarIcon: {
     marginRight: 10
   },
+  userContainer: {
+    flexDirection: 'row',
+    marginBottom: 10
+  },
   title: {
     color: COLORS.WHITE,
     fontWeight: '500'
@@ -201,6 +217,10 @@ const styles = StyleSheet.create({
     color: COLORS.WHITE_70,
     fontWeight: '500'
   },
+  progressContainer: {
+    alignItems: 'center',
+    marginBottom: 20
+  },
   gimiCard: {
     ...SHADOW,
     height: 80,
@@ -208,13 +228,25 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     overflow: 'visible'
   },
-  userContainer: {
-    flexDirection: 'row',
-    marginBottom: 10
+  columnCentered: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   arrowIcon: {
     tintColor: COLORS.WHITE_70,
     marginLeft: 10
+  },
+  goalImage: {
+    height: '100%',
+    width: '100%',
+    resizeMode: 'cover'
+  },
+  infoText: {
+    color: COLORS.WHITE_70,
+    fontWeight: '500',
+    marginTop: 5,
+    textAlign: 'center'
   }
 })
 

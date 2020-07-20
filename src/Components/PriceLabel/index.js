@@ -33,10 +33,10 @@ class PriceLabel extends Component {
     const marginTop = this.getTopMargin(priceSize)
     return (
       <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-        <Text style={styles.prefix} size={priceSize}>{prefix}{integer}</Text>
+        <Text style={styles.integer} size={priceSize}>{prefix}{integer}</Text>
         {showDecimals
-          ? <Text style={[styles.suffix, { marginTop }]} size='small'>.{decimals} KR</Text>
-          : <Text style={[styles.suffix, { marginTop }]} size='small'>KR</Text>}
+          ? <Text style={[styles.decimal, { marginTop }]} size='small'>.{decimals} KR</Text>
+          : <Text style={[styles.decimal, { marginTop }]} size='small'>KR</Text>}
       </View>
     )
   }
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row'
   },
-  prefix: {
+  integer: {
     fontWeight: '800',
     color: COLORS.WHITE
   },
-  suffix: {
+  decimal: {
     fontWeight: '400',
     color: COLORS.WHITE,
     marginLeft: 2
