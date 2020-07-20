@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* Gimi_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Gimi_testTests.m */; };
+		0C7F96C4C41241E9B4E474C1 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85353CE7B2444F4D895D6D20 /* Muli-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -17,13 +18,12 @@
 		2DCD954D1E0B4F2C00145EB5 /* Gimi_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Gimi_testTests.m */; };
 		54C35003ABF5124F27386004 /* libPods-Gimi_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2126C39B503CF58CA05B48FF /* libPods-Gimi_test.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		82DDDA5E9D334B0B9243D96C /* Muli-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9DCAEFD6B46919A3A89A8 /* Muli-Black.ttf */; };
 		A2D7D060AD93C19FE6C23573 /* libPods-Gimi_test-Gimi_testTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29196B2C73B5CA90246CBE43 /* libPods-Gimi_test-Gimi_testTests.a */; };
+		CC45431E162E40AC892F282D /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD173984F45D4F52BB6CB6B8 /* Muli-Regular.ttf */; };
 		D916A2EA5368BA9A5C84A7A5 /* libPods-Gimi_test-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC90602A514398C65AC21E3 /* libPods-Gimi_test-tvOS.a */; };
 		DA0D056F2495056C61AD38A7 /* libPods-Gimi_test-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7924A8663556E0BCE6B2FA32 /* libPods-Gimi_test-tvOSTests.a */; };
-		82DDDA5E9D334B0B9243D96C /* Muli-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9DCAEFD6B46919A3A89A8 /* Muli-Black.ttf */; };
-		0C7F96C4C41241E9B4E474C1 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85353CE7B2444F4D895D6D20 /* Muli-Bold.ttf */; };
 		DA55E0FC2C9C4CA9A17F09DF /* Muli-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA5661309E1A450096C04502 /* Muli-Light.ttf */; };
-		CC45431E162E40AC892F282D /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD173984F45D4F52BB6CB6B8 /* Muli-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,22 +59,22 @@
 		29196B2C73B5CA90246CBE43 /* libPods-Gimi_test-Gimi_testTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gimi_test-Gimi_testTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* Gimi_test-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gimi_test-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Gimi_test-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gimi_test-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE9DCAEFD6B46919A3A89A8 /* Muli-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Muli-Black.ttf"; path = "../assets/fonts/Muli-Black.ttf"; sourceTree = "<group>"; };
 		425FECF76D0D27828C3CDD3E /* Pods-Gimi_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimi_test.release.xcconfig"; path = "Target Support Files/Pods-Gimi_test/Pods-Gimi_test.release.xcconfig"; sourceTree = "<group>"; };
 		7924A8663556E0BCE6B2FA32 /* libPods-Gimi_test-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gimi_test-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Gimi_test/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85353CE7B2444F4D895D6D20 /* Muli-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Muli-Bold.ttf"; path = "../assets/fonts/Muli-Bold.ttf"; sourceTree = "<group>"; };
 		AA21BCE92CCC6A9E34FDF2E0 /* Pods-Gimi_test-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimi_test-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Gimi_test-tvOS/Pods-Gimi_test-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B7425E82098B86E4BECFD8BB /* Pods-Gimi_test-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimi_test-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Gimi_test-tvOSTests/Pods-Gimi_test-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEC90602A514398C65AC21E3 /* libPods-Gimi_test-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gimi_test-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB5ACAEB7FCA411ACA80462 /* Pods-Gimi_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimi_test.debug.xcconfig"; path = "Target Support Files/Pods-Gimi_test/Pods-Gimi_test.debug.xcconfig"; sourceTree = "<group>"; };
+		CA5661309E1A450096C04502 /* Muli-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Muli-Light.ttf"; path = "../assets/fonts/Muli-Light.ttf"; sourceTree = "<group>"; };
 		D28ACE7061F44611531D7309 /* Pods-Gimi_test-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimi_test-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Gimi_test-tvOS/Pods-Gimi_test-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		DD173984F45D4F52BB6CB6B8 /* Muli-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Muli-Regular.ttf"; path = "../assets/fonts/Muli-Regular.ttf"; sourceTree = "<group>"; };
 		DD1C6BE4D8F795EFA36C6A32 /* Pods-Gimi_test-Gimi_testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimi_test-Gimi_testTests.release.xcconfig"; path = "Target Support Files/Pods-Gimi_test-Gimi_testTests/Pods-Gimi_test-Gimi_testTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FAC1B2AE1153AD4F1A7F294B /* Pods-Gimi_test-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimi_test-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Gimi_test-tvOSTests/Pods-Gimi_test-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		3AE9DCAEFD6B46919A3A89A8 /* Muli-Black.ttf */ = {isa = PBXFileReference; name = "Muli-Black.ttf"; path = "../assets/fonts/Muli-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		85353CE7B2444F4D895D6D20 /* Muli-Bold.ttf */ = {isa = PBXFileReference; name = "Muli-Bold.ttf"; path = "../assets/fonts/Muli-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CA5661309E1A450096C04502 /* Muli-Light.ttf */ = {isa = PBXFileReference; name = "Muli-Light.ttf"; path = "../assets/fonts/Muli-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DD173984F45D4F52BB6CB6B8 /* Muli-Regular.ttf */ = {isa = PBXFileReference; name = "Muli-Regular.ttf"; path = "../assets/fonts/Muli-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +130,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		04C83BD2DE8749329B8AB2B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AE9DCAEFD6B46919A3A89A8 /* Muli-Black.ttf */,
+				85353CE7B2444F4D895D6D20 /* Muli-Bold.ttf */,
+				CA5661309E1A450096C04502 /* Muli-Light.ttf */,
+				DD173984F45D4F52BB6CB6B8 /* Muli-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* Gimi_test */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +180,6 @@
 				B7425E82098B86E4BECFD8BB /* Pods-Gimi_test-tvOSTests.debug.xcconfig */,
 				FAC1B2AE1153AD4F1A7F294B /* Pods-Gimi_test-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,18 +216,6 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
-		};
-		04C83BD2DE8749329B8AB2B2 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				3AE9DCAEFD6B46919A3A89A8 /* Muli-Black.ttf */,
-				85353CE7B2444F4D895D6D20 /* Muli-Bold.ttf */,
-				CA5661309E1A450096C04502 /* Muli-Light.ttf */,
-				DD173984F45D4F52BB6CB6B8 /* Muli-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
