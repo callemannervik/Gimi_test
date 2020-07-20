@@ -1,6 +1,6 @@
 /** Node modules */
 import React, { Component } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, Animated, StyleSheet, Text } from 'react-native'
 
 /** Core */
 import { COLORS } from 'Core/colors'
@@ -10,19 +10,36 @@ import { SHADOW } from 'Core/styles'
 const BAR_HEIGHT = 14
 
 class ProgressBar extends Component {
-  getProgressWidth = () => {
-    const { progress } = this.props
-    if (progress && progress >= 0 && progress <= 100) {
-      return `${progress}%`
+  constructor (props) {
+    super()
+    const { animate, progress } = props
+    this.animatedValue = new Animated.Value(animate ? 0 : progress)
+  }
+
+  componentDidMount () {
+    const { animate, progress } = this.props
+    if (animate) {
+      this.animateProgress(progress)
     }
-    return null
+  }
+
+  animateProgress = (toValue = 0) => {
+    Animated.timing(this.animatedValue, {
+      toValue,
+      delay: 200,
+      duration: 400,
+      useNativeDriver: false
+    }).start()
   }
 
   render () {
-    const progressWidth = this.getProgressWidth()
+    const width = this.animatedValue.interpolate({
+      inputRange: [0, 100],
+      outputRange: ['0%', '100%']
+    })
     return (
       <View style={styles.container}>
-        <View style={[styles.progress, { width: progressWidth }]} />
+        <Animated.View style={[styles.progress, { width }]} />
       </View>
     )
   }

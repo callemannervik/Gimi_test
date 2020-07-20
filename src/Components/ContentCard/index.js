@@ -1,10 +1,13 @@
 /** Node modules */
 import React, { Component } from 'react'
-import { View, Image, StyleSheet } from 'react-native'
+import { View, Image, Animated, StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 /** Core */
 import { COLORS } from 'Core/colors'
+
+/** Components */
+import AnimatedContainer from 'Components/AnimatedContainer'
 
 class ContentCard extends Component {
   renderHeader () {
@@ -28,23 +31,25 @@ class ContentCard extends Component {
   }
 
   render () {
-    const { children, pressEnabled, containerStyle, onPress } = this.props
+    const { children, pressEnabled, containerStyle, onPress, animate, delay } = this.props
     return (
-      <TouchableOpacity
-        style={[styles.container, containerStyle && containerStyle]}
-        containerStyle={{ flex: 1 }}
-        activeOpacity={0.8}
-        disabled={!pressEnabled}
-        onPress={onPress}
-      >
-        {this.renderHeader()}
-        <View style={styles.contentContainer}>
-          <View style={{ flex: 1 }}>
-            {children}
+      <AnimatedContainer animate={animate} delay={delay} style={{ flex: 1 }}>
+        <TouchableOpacity
+          style={[styles.container, containerStyle && containerStyle]}
+          containerStyle={{ flex: 1 }}
+          activeOpacity={0.8}
+          disabled={!pressEnabled}
+          onPress={onPress}
+        >
+          {this.renderHeader()}
+          <View style={styles.contentContainer}>
+            <View style={{ flex: 1 }}>
+              {children}
+            </View>
+            {this.renderNavigationIcon()}
           </View>
-          {this.renderNavigationIcon()}
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </AnimatedContainer>
     )
   }
 }

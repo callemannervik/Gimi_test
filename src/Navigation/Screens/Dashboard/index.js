@@ -57,8 +57,9 @@ class Dashboard extends Component {
     return (
       <ContentCard
         pressEnabled
-        headerComponent={<ProgressBar progress={80} />}
+        headerComponent={<ProgressBar progress={80} animate />}
         onPress={() => navigation.navigate('UnderConstruction')}
+        animate
       >
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 2 }}>
@@ -75,7 +76,7 @@ class Dashboard extends Component {
 
   renderAccounts () {
     return (
-      <ContentCard>
+      <ContentCard animate delay={100}>
         <View style={styles.columnsContainer}>
           <View style={{ flex: 1 }}>
             <Text style={styles.title}>Accounts</Text>
@@ -96,7 +97,7 @@ class Dashboard extends Component {
 
   renderGoals () {
     return (
-      <ContentCard containerStyle={{ marginRight: 5 }}>
+      <ContentCard containerStyle={{ marginRight: 5 }} animate delay={200}>
         <Text style={[styles.title, { marginBottom: 10 }]}>Goals</Text>
         <View style={{ alignItems: 'center', marginBottom: 20 }}>
           <ProgressCircle progress={30}>
@@ -111,7 +112,7 @@ class Dashboard extends Component {
 
   renderChores () {
     return (
-      <ContentCard containerStyle={{ marginLeft: 5 }}>
+      <ContentCard containerStyle={{ marginLeft: 5 }} animate delay={250}>
         <Text style={[styles.title, { marginBottom: 10 }]}>Chores</Text>
         <View style={{ alignItems: 'center', marginBottom: 20 }}>
           <ProgressCircle progress={30}>
