@@ -1,6 +1,7 @@
 /** Node modules */
 import React, { Component } from 'react'
 import { ScrollView, Image, StyleSheet, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 /** Core */
 import { COLORS } from 'Core/colors'
@@ -17,38 +18,45 @@ import ProfileImage from 'Components/ProfileImage'
 import ScreenContainer from 'Components/ScreenContainer'
 
 /** Mocked strings */
-const good_morning = 'Good morning, Calle!'
-const all_set = "You're all set"
-const lucy = 'Lucy'
-const master = 'Master • Active 4h ago'
-const allowance = 'Allowance'
-const to_be_tranfered = 'to be transfered in 1 day'
+import strings from 'Translations/strings'
 
 class Dashboard extends Component {
   renderHeader () {
     return (
       <View style={styles.headerContainer}>
-        <Text style={styles.headerTitle} size='xlarge'>{good_morning}</Text>
+        <Text style={styles.headerTitle} size='xlarge'>
+          {strings.good_morning}
+        </Text>
         <View style={{ flexDirection: 'row' }}>
-          <Image source={require('Resources/Icons/calendar.png')} style={styles.calendarIcon} />
-          <Text style={styles.subTitle}>{all_set}</Text>
+          <Image
+            source={require('Resources/Icons/calendar.png')}
+            style={styles.calendarIcon}
+          />
+          <Text style={styles.subTitle}>{strings.you_are_set}</Text>
         </View>
       </View>
     )
   }
 
   renderUser () {
+    const { navigation } = this.props
     return (
-      <View style={styles.userContainer}>
+      <TouchableOpacity
+        style={styles.userContainer}
+        onPress={() => navigation.navigate('UnderConstruction')}
+      >
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={styles.headerTitle} size='large'>Lucy</Text>
-            <Image source={require('Resources/Icons/forwardArrow.png')} style={styles.arrowIcon} />
+            <Text style={styles.headerTitle} size='large'>{strings.bob}</Text>
+            <Image
+              source={require('Resources/Icons/forwardArrow.png')}
+              style={styles.arrowIcon}
+            />
           </View>
-          <Text style={styles.subTitle}>{master}</Text>
+          <Text style={styles.subTitle}>{strings.master}</Text>
         </View>
         <ProfileImage source={require('Resources/Images/user.jpg')} />
-      </View>
+      </TouchableOpacity>
     )
   }
 
@@ -63,8 +71,8 @@ class Dashboard extends Component {
       >
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 2 }}>
-            <Text style={styles.title}>{allowance}</Text>
-            <Text style={styles.subTitle}>{to_be_tranfered}</Text>
+            <Text style={styles.title}>{strings.allowance}</Text>
+            <Text style={styles.subTitle}>{strings.to_be_transfered}</Text>
           </View>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <PriceLabel value={50} showPrefix />
@@ -75,20 +83,24 @@ class Dashboard extends Component {
   }
 
   renderAccounts () {
+    const { navigation } = this.props
     return (
       <ContentCard animate delay={100}>
         <View style={styles.columnsContainer}>
           <View style={{ flex: 1 }}>
-            <Text style={styles.title}>Accounts</Text>
-            <Text style={[styles.subTitle, { marginBottom: 10 }]}>Gimi card</Text>
+            <Text style={styles.title}>{strings.accounts}</Text>
+            <Text style={[styles.subTitle, { marginBottom: 10 }]}>{strings.gimi_card}</Text>
             <Image source={require('Resources/Images/gimiCard.png')} style={styles.gimiCard} />
           </View>
           <View style={{ flex: 1 }}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
               <PriceLabel value={1900.54} size='xlarge' />
-              <Text style={styles.subTitle}>Card balance</Text>
+              <Text style={styles.subTitle}>{strings.card_balance}</Text>
             </View>
-            <Button title='Top up' />
+            <Button
+              title={strings.top_up}
+              onPress={() => navigation.navigate('UnderConstruction')}
+            />
           </View>
         </View>
       </ContentCard>
@@ -96,21 +108,29 @@ class Dashboard extends Component {
   }
 
   renderGoals () {
+    const { navigation } = this.props
     return (
       <ContentCard containerStyle={{ marginRight: 5 }} animate delay={200}>
-        <Text style={[styles.title, { marginBottom: 10 }]}>Goals</Text>
+        <Text style={[styles.title, { marginBottom: 10 }]}>{strings.goals}</Text>
         <View style={{ alignItems: 'center', marginBottom: 20 }}>
           <ProgressCircle progress={30}>
-            <Image source={require('Resources/Images/switch.jpeg')} style={{ height: '100%', width: '100%', resizeMode: 'cover' }} />
+            <Image
+              source={require('Resources/Images/switch.jpeg')}
+              style={{ height: '100%', width: '100%', resizeMode: 'cover' }}
+            />
           </ProgressCircle>
-          <Text style={styles.subTitle} size='small'>Nintendo Switch</Text>
+          <Text style={styles.subTitle} size='small'>{strings.nintendo}</Text>
         </View>
-        <Button title='Contribute' />
+        <Button
+          title={strings.contribute}
+          onPress={() => navigation.navigate('UnderConstruction')}
+        />
       </ContentCard>
     )
   }
 
   renderChores () {
+    const { navigation } = this.props
     return (
       <ContentCard containerStyle={{ marginLeft: 5 }} animate delay={250}>
         <Text style={[styles.title, { marginBottom: 10 }]}>Chores</Text>
@@ -120,9 +140,12 @@ class Dashboard extends Component {
               <Text style={{ color: 'white', fontWeight: '500' }} size='small'>3/6</Text>
             </View>
           </ProgressCircle>
-          <Text style={styles.subTitle} size='small'>This week</Text>
+          <Text style={styles.subTitle} size='small'>{strings.this_week}</Text>
         </View>
-        <Button title='Add chore' />
+        <Button
+          title={strings.add_chore}
+          onPress={() => navigation.navigate('UnderConstruction')}
+        />
       </ContentCard>
     )
   }

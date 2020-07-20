@@ -9,6 +9,9 @@ import { COLORS } from 'Core/colors'
 import Text from 'Components/Text'
 import ScreenContainer from 'Components/ScreenContainer'
 
+/** Mocked strings */
+import strings from 'Translations/strings'
+
 class UnderConstruction extends Component {
   render () {
     const { navigation } = this.props
@@ -23,7 +26,7 @@ class UnderConstruction extends Component {
           style={styles.scrollContainer}
           contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
         >
-          <Text style={styles.text} size='large'>Oops, this is still under construction.. </Text>
+          <Text style={styles.text} size='large'>{strings.under_construction}</Text>
         </ScrollView>
       </ScreenContainer>
     )
