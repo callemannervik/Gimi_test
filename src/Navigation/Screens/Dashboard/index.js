@@ -100,7 +100,9 @@ class Dashboard extends Component {
           <View style={{ flex: 1 }}>
             <Text style={styles.title}>{strings.accounts}</Text>
             <Text style={[styles.subTitle, { marginBottom: 10 }]}>{strings.gimi_card}</Text>
-            <Image source={require('Resources/Images/gimiCard.png')} style={styles.gimiCard} />
+            <View style={SHADOW}>
+              <Image source={require('Resources/Images/gimiCard.png')} style={styles.gimiCard} />
+            </View>
           </View>
           <View style={{ flex: 1 }}>
             <View style={styles.columnCentered}>
@@ -225,7 +227,6 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   gimiCard: {
-    ...SHADOW,
     height: 80,
     width: 130,
     resizeMode: 'contain',
