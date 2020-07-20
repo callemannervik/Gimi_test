@@ -4,9 +4,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 /** Screens */
-import LaunchScreen from './LaunchScreen'
-import Dashboard from './Dashboard'
-import UnderConstruction from './UnderConstruction'
+import LaunchScreen from 'Navigation/Screens/LaunchScreen'
+import Dashboard from 'Navigation/Screens/Dashboard'
+import UnderConstruction from 'Navigation/Screens/UnderConstruction'
 
 const fadeTransition = ({ current, closing }) => ({
   cardStyle: {

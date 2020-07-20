@@ -11,10 +11,13 @@ import ScreenContainer from 'Components/ScreenContainer'
 
 class UnderConstruction extends Component {
   render () {
+    const { navigation } = this.props
     return (
       <ScreenContainer
         backgroundColor={COLORS.DARK_BLUE}
         backgroundImage={require('Resources/Backgrounds/space.png')}
+        navigation={navigation}
+        showBack
       >
         <ScrollView
           style={styles.scrollContainer}

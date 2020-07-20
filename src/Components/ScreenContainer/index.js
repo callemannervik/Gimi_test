@@ -1,6 +1,7 @@
 /** Node modules */
 import React, { Component } from 'react'
 import { View, SafeAreaView, Image, StyleSheet, Dimensions } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 /** Constants */
 const SCREEN_SIZE = Dimensions.get('window')
@@ -18,13 +19,31 @@ class ScreenContainer extends Component {
     return null
   }
 
+  renderBackButton () {
+    const { navigation, showBack } = this.props
+    if (showBack && navigation) {
+      return (
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          containerStyle={styles.backButton}
+        >
+          <Image style={styles.backIcon} source={require('Resources/Icons/forwardArrow.png')} />
+        </TouchableOpacity>
+      )
+    }
+    return null
+  }
+
   render () {
     const { children, backgroundColor } = this.props
     return (
       <View style={[styles.container, backgroundColor && { backgroundColor }]}>
         {this.renderBackgroundImage()}
         <SafeAreaView style={{ flex: 1 }}>
-          {children}
+          <View style={{ flex: 1 }}>
+            {children}
+            {this.renderBackButton()}
+          </View>
         </SafeAreaView>
       </View>
     )
@@ -47,6 +66,23 @@ const styles = StyleSheet.create({
     height: SCREEN_SIZE.height,
     width: SCREEN_SIZE.width,
     resizeMode: 'cover'
+  },
+  backButton: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: 50,
+    width: 50,
+    overflow: 'hidden',
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  backIcon: {
+    height: 15,
+    width: 15,
+    resizeMode: 'contain',
+    transform: [{ rotate: '180deg' }]
   }
 })
 
