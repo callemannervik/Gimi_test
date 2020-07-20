@@ -78,7 +78,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
 

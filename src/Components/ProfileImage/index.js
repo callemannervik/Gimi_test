@@ -7,7 +7,7 @@ import { COLORS } from 'Core/colors'
 import { SHADOW } from 'Core/styles'
 
 /** Constants */
-const IMAGE_SIZE = 55
+const IMAGE_SIZE = 50
 const BORDER_SIZE = 2
 const BORDER_CONTAINER_SIZE = IMAGE_SIZE + BORDER_SIZE * 2
 

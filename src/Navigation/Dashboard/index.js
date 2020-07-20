@@ -64,7 +64,7 @@ class Dashboard extends Component {
             <Text style={styles.subTitle}>{to_be_tranfered}</Text>
           </View>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <PriceLabel value={50} size='large' showPrefix />
+            <PriceLabel value={50} showPrefix />
           </View>
         </View>
       </ContentCard>
@@ -77,12 +77,12 @@ class Dashboard extends Component {
         <View style={styles.columnsContainer}>
           <View style={{ flex: 1 }}>
             <Text style={styles.title}>Accounts</Text>
-            <Text style={styles.subTitle}>Gimi card</Text>
+            <Text style={[styles.subTitle, { marginBottom: 10 }]}>Gimi card</Text>
             <Image source={require('Resources/Images/gimiCard.png')} style={styles.gimiCard} />
           </View>
           <View style={{ flex: 1 }}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-              <PriceLabel value={1900.54} />
+              <PriceLabel value={1900.54} size='xlarge' />
               <Text style={styles.subTitle}>Card balance</Text>
             </View>
             <Button title='Top up' />
@@ -95,10 +95,10 @@ class Dashboard extends Component {
   renderGoals () {
     return (
       <ContentCard containerStyle={{ marginRight: 5 }}>
-        <Text style={styles.title}>Goals</Text>
+        <Text style={[styles.title, { marginBottom: 10 }]}>Goals</Text>
         <View style={{ alignItems: 'center', marginBottom: 20 }}>
           <ProgressCircle progress={30}>
-            <Image source={require('Resources/Images/switch.jpeg')} style={styles.gimiCard} />
+            <Image source={require('Resources/Images/switch.jpeg')} style={{ height: '100%', width: '100%', resizeMode: 'cover' }} />
           </ProgressCircle>
           <Text style={styles.subTitle} size='small'>Nintendo Switch</Text>
         </View>
@@ -110,7 +110,7 @@ class Dashboard extends Component {
   renderChores () {
     return (
       <ContentCard containerStyle={{ marginLeft: 5 }}>
-        <Text style={styles.title}>Chores</Text>
+        <Text style={[styles.title, { marginBottom: 10 }]}>Chores</Text>
         <View style={{ alignItems: 'center', marginBottom: 20 }}>
           <ProgressCircle progress={30}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     flexDirection: 'row',
-    marginBottom: 20
+    marginBottom: 10
   },
   arrowIcon: {
     tintColor: COLORS.WHITE_70,
